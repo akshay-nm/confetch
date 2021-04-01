@@ -4,8 +4,8 @@ const customFetch = (parameters = {}) => {
   const { url, timeoutDuration, ...unsupportedOptions } = otherOptions
 
   // mention unsupported parameters
-  //if (Object.keys(unsupportedOptions).length > 0)
-  //console.log('Custom fetch: Ignoring unsupported options:', unsupportedOptions)
+  if (Object.keys(unsupportedOptions).length > 0)
+    console.log('Custom fetch: Ignoring unsupported options:', unsupportedOptions)
 
   const fetchOptions = {
     method,
@@ -49,4 +49,4 @@ const customFetch = (parameters = {}) => {
   return requestController
 }
 
-export default customFetch
+module.exports = customFetch
