@@ -6,6 +6,10 @@
   "repository": "git@github.com:akshay-nm/confetch.git",
   "author": "Akshay Kumar <akshay.nm92@gmail.com>",
   "license": "MIT",
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
   "scripts": {
     "test": "jest"
   },
