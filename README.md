@@ -78,4 +78,4 @@ You can go through the `sample-api.js` and `sample-protected-api.js` if you are 
 
 ### What's next?
 
-- tests
+- Some pre-configured fetches
