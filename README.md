@@ -32,7 +32,13 @@ Both of them return a promise.
 So this is how it would look like:
 
 ```
-confetchConfiguration = {}
+confetchConfiguration = {
+  urlBase: 'https://some.org',
+  timeoutDuration = 3000,
+  headers = {
+    'Content-Type': 'application/json'
+  }
+}
 confetch.configure(confetchConfiguration)
 
 ...

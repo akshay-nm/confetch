@@ -10,12 +10,12 @@ confetch.config = {
   timeoutDuration: 3000,
 }
 
-confetch.configure = ({ everythingInUrlBeforePath, defaultHeaders, timeoutInMillis, debug }) => {
+confetch.configure = ({ urlBase, headers, timeoutDuration, debug }) => {
   confetch.debug = !!debug
 
-  confetch.config.urlBase = everythingInUrlBeforePath
-  confetch.config.timeoutDuration = timeoutInMillis
-  confetch.config.headers = defaultHeaders
+  confetch.config.urlBase = urlBase
+  confetch.config.timeoutDuration = timeoutDuration
+  confetch.config.headers = headers
 }
 
 export const getUrlFromPath = (path) => {
