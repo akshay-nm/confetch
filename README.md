@@ -3,6 +3,7 @@
 **Configur-ed/able fetch**
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![codecov](https://codecov.io/gh/akshay-nm/confetch/branch/main/graph/badge.svg?token=4WB73CELH0)](https://codecov.io/gh/akshay-nm/confetch)
 
 This is a wrapper over `window.fetch`. Following configuration options are supported:
 
