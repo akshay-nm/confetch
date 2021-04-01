@@ -11,12 +11,14 @@ const config = {
   },
 }
 
-const configure = ({ urlBase, headers, timeoutDuration, debug }) => {
-  config.debug = !!debug
-  config.urlBase = urlBase
+const getCurrentGlobalConfiguration = () => ({ ...config })
 
-  config.requestParams.timeoutDuration = timeoutDuration
-  config.requestParams.headers = headers
+const configure = ({ urlBase, headers, timeoutDuration, debug }) => {
+  config.debug = !!debug || config.debug
+  config.urlBase = urlBase || config.urlBase
+
+  config.requestParams.timeoutDuration = timeoutDuration || config.requestParams.timeoutDuration
+  config.requestParams.headers = headers || config.requestParams.headers
 }
 
 const getUrlFromPath = (path) => {
@@ -38,4 +40,5 @@ module.exports = {
   confetch,
   getUrlFromPath,
   configure,
+  getCurrentGlobalConfiguration,
 }
