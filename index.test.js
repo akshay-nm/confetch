@@ -1,4 +1,4 @@
-const { confetch, configure, getCurrentGlobalConfiguration } = require('./index')
+const { confetch, configure, getCurrentGlobalConfiguration, getUrlFromPath } = require('./index')
 const defaultConfiguration = {
   debug: false,
   requestParams: {
@@ -40,6 +40,23 @@ describe('Confetch:', () => {
       }
 
       expect(() => confetch(info)).not.toThrow()
+    })
+  })
+  describe('getUrlFromPath: ', () => {
+    test('Throw if baseUrl is not set: ', () => {
+      expect(getCurrentGlobalConfiguration().baseUrl).toBe(undefined)
+      expect(() => getUrlFromPath()).toThrow()
+    })
+    test('Return correct url from path: ', () => {
+      configure({
+        baseUrl: 'https://sdiot.io',
+        timeoutDuration: 5000,
+      })
+
+      expect(getCurrentGlobalConfiguration().baseUrl).toEqual('https://sdiot.io')
+      expect(getUrlFromPath('/xyz')).toEqual('https://sdiot.io/xyz')
+      expect(getUrlFromPath('/xyz/abc')).toEqual('https://sdiot.io/xyz/abc')
+      expect(getUrlFromPath('/xyz/abc?a=1')).toEqual('https://sdiot.io/xyz/abc?a=1')
     })
   })
 })
