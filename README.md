@@ -5,7 +5,13 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![codecov](https://codecov.io/gh/akshay-nm/confetch/branch/main/graph/badge.svg?token=4WB73CELH0)](https://codecov.io/gh/akshay-nm/confetch)
 
-This is a wrapper over `window.fetch`. Following configuration options are supported:
+## tldr;
+
+This is a wrapper over `window.fetch`. Go through [https://github.com/akshay-nm/confetch-example](https://github.com/akshay-nm/confetch-example) for more details.
+
+## Some details
+
+Following configuration options are supported:
 
 - `baseUrl`: You can specify a base url and use the `getUrlFromPath` method to get complete urls for your requests.
 - `timeoutDuration`: This is the duration after which your requests will be aborted.
