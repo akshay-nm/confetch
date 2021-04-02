@@ -13,9 +13,9 @@ const config = {
 
 const getCurrentGlobalConfiguration = () => ({ ...config })
 
-const configure = ({ urlBase, headers, timeoutDuration, debug }) => {
+const configure = ({ baseUrl, headers, timeoutDuration, debug }) => {
   config.debug = !!debug || config.debug
-  config.urlBase = urlBase || config.urlBase
+  config.baseUrl = baseUrl || config.baseUrl
 
   config.requestParams.timeoutDuration = timeoutDuration || config.requestParams.timeoutDuration
   config.requestParams.headers = headers || config.requestParams.headers
@@ -23,7 +23,7 @@ const configure = ({ urlBase, headers, timeoutDuration, debug }) => {
 
 const getUrlFromPath = (path) => {
   try {
-    if (!config.urlBase)
+    if (!config.baseUrl)
       throw Error('Incomplete configuration: Base url not specified or is not valid. config.urlBase:', config.urlBase)
     return `${config.urlBase}/api${path || ''}`
   } catch (error) {

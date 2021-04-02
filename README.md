@@ -7,7 +7,7 @@
 
 This is a wrapper over `window.fetch`. Following configuration options are supported:
 
-- `urlBase`: You can specify a base url and use the `getUrlFromPath` method to get complete urls for your requests.
+- `baseUrl`: You can specify a base url and use the `getUrlFromPath` method to get complete urls for your requests.
 - `timeoutDuration`: This is the duration after which your requests will be aborted.
 - `headers`: This is an object (just like what you would pass to a simple `fetch` call).
 
@@ -35,7 +35,7 @@ So this is how it would look like:
 ```
 const { configure } = require('@akshay-nm/confetch')
 confetchConfiguration = {
-  urlBase: 'https://some.org',
+  baseUrl: 'https://some.org',
   timeoutDuration = 3000,
   headers = {
     'Content-Type': 'application/json'
