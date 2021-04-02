@@ -22,13 +22,9 @@ const configure = ({ baseUrl, headers, timeoutDuration, debug }) => {
 }
 
 const getUrlFromPath = (path) => {
-  try {
-    if (!config.baseUrl)
-      throw Error('Incomplete configuration: Base url not specified or is not valid. config.urlBase:', config.urlBase)
-    return `${config.urlBase}/api${path || ''}`
-  } catch (error) {
-    console.log('Error:', error)
-  }
+  if (!config.baseUrl)
+    throw Error('Incomplete configuration: Base url not specified or is not valid. config.urlBase:', config.urlBase)
+  return `${config.baseUrl}${path || ''}`
 }
 
 const confetch = (info) => {
