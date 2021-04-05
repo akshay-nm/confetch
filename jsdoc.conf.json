@@ -11,8 +11,7 @@
     "destination": "./docs/",               
     "recurse": true,
     "readme": "./README.md",
-    "template": "./node_modules/@pixi/jsdoc-template",
-    "package": "./package.json"        
+    "template": "./node_modules/@pixi/jsdoc-template"    
   },
   "tags": {
     "allowUnknownTags": true,
