@@ -3,7 +3,6 @@
   "version": "0.8.1",
   "description": "Configur-ed/able fetch",
   "main": "dist/confetch.js",
-  "module": "src/index.js",
   "repository": "git@github.com:akshay-nm/confetch.git",
   "author": "Akshay Kumar <akshay.nm92@gmail.com>",
   "license": "MIT",
