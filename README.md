@@ -12,22 +12,37 @@ This is a wrapper over `window.fetch`. Go through [https://github.com/akshay-nm/
 This package also has a default `responseHandler` which you can use. The `responseHandler` just resolves the `res.json()` promise if possible, otherwise throws the errors based on statusCodes. You can pass the errors as an object.
 
 ```jsx
-const defaultStatusCodes = {
-  400: 'INCORRECT_REQUEST_FORMAT',
-  401: 'INVALID_SESSION',
-  403: 'FORBIDDEN',
-  404: 'RESOURCE_NOT_FOUND',
-  408: 'REQUEST_TIMED_OUT',
-}
+const { configureStatusCodeBasedErrors, configureConfetch } = require('@akshay-nm/confetch')
 
-const responseHandler = (response, statusCodes = defaultStatusCodes) => {
-  if (response?.ok) return response.json()
-  if (response && response.status && statusCodes[response.status]) throw Error(statusCodes[response.status])
-  throw Error('REQUEST_TIMED_OUT') // This will be reached only if the request was aborted using abort controller
-}
+// The new object is merged (it does not replace the default status codes configuration).
+configureStatusCodeBasedErrors({
+  400: 'CUSTOM ERROR MESSAGE TO BE THROWN IF THE RESPONSE CODE IS 400',
+}) // This will make sure that all requestHandlers throw error with the custom message whenever the resposne status code is 400
+
+configureConfetch({
+  baseUrl: 'YOUR_BASE_URL', // this is the only parameter you NEED to pass (otherwise confetch will throw)
+})
+
+...
+
+const { buildResponseHandler, getUrlFromPath } = require('@akshay-nm/confetch')
+
+const responseHandler1 = buildResponseHandler() // This will throw errors preconfigured message
+const responseHandler2 = buildResponseHandler({ 400: 'OTHER CUSTOM MESSAGE' }) // This will throw error with 'OTHER CUSTOM MESSAGE' on 400
+
+confetch({
+  url: getUrlFromPath('YOUR_PATH?YOUR_QUERY'),
+  ... // rest of parameters for fetch
+}).send().then(responseHander1).catch(console.log) // this will log the global message in case of a 400 (configured using configureStatusCodeBasedErrors)
+
+confetch({
+  url: getUrlFromPath('YOUR_PATH?YOUR_QUERY'),
+  ... // rest of parameters for fetch
+}).send().then(responseHander1).catch(console.log) // this will log 'OTHER CUSTOM MESSAGE' in case of 400 (configured via buildResponseHandler)
+
 ```
 
-Any additional errors are thrown as is.
+Since the response handler just tries to convert the response into JSON, it either returns a promise or just throws the errors.
 
 ## Some details
 
@@ -58,7 +73,7 @@ Both of them return a promise.
 
 So this is how it would look like:
 
-```
+```jsx
 const { configure } = require('@akshay-nm/confetch')
 confetchConfiguration = {
   baseUrl: 'https://some.org',
