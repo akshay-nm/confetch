@@ -1,6 +1,6 @@
 {
   "name": "@akshay-nm/confetch",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "Configur-ed/able fetch",
   "main": "index.js",
   "repository": "git@github.com:akshay-nm/confetch.git",
@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "abort-controller": "^3.0.0",
+    "jsdoc": "^3.6.6",
     "node-fetch": "^2.6.1"
   }
 }
