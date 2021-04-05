@@ -11,7 +11,7 @@
 
 ## tldr;
 
-This is a wrapper over `window.fetch`. Go through [https://github.com/akshay-nm/confetch-example](https://github.com/akshay-nm/confetch-example) for more details.
+This is a wrapper over `window.fetch`. Go through [https://github.com/akshay-nm/confetch-example](https://github.com/akshay-nm/confetch-example) and [Confetch manual](https://akshay-nm.github.io/confetch) for more details.
 
 This package also has a default `responseHandler` which you can use. The `responseHandler` just resolves the `res.json()` promise if possible, otherwise throws the errors based on statusCodes. You can pass the errors as an object.
 
