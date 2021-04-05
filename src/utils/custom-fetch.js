@@ -1,8 +1,11 @@
 module.exports = ({ isBrowser }) => {
-  const value = isBrowser ? require('./custom-fetch.browser') : require('./custom-fetch.node')
-
+  const value = require('./custom-fetch.def.js')
   return {
     cacheable: true,
-    code: 'module.exports = ' + value,
+    code: `
+    const AbortController = ${isBrowser ? 'window.AbortController' : 'require("abort-controller")'};
+    const Request = ${isBrowser ? 'window.Request' : 'require("node-fetch").Request'};
+    module.exports = ${value}
+    `,
   }
 }

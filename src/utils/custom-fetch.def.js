@@ -1,8 +1,5 @@
-const AbortController = require('abort-controller')
-const Request = require('node-fetch').Request
-
 /**
- * Wrapper over fetch (node), for more details, checkout <a href='https://github.com/node-fetch/node-fetch#api' rel='nofollow norefferer' target='_blank'>Node-fetch docs</a>.
+ * Wrapper over fetch (browser), for more details, checkout <a href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch' rel='nofollow norefferer' target='_blank'>Using Fetch | MDN</a>.
  * @memberof module:utils
  *
  * @param {object} parameters url, method, and other request parameters as mentioned in <a href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a>
