@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Module: Confetch</title>
+    <title>Module: utils</title>
     
     
     
@@ -170,7 +170,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="module-Confetch.html">Module: Confetch</h1>
+        <h1 class="page-title" data-filename="module-utils.html">Module: utils</h1>
         
 
 
@@ -179,7 +179,7 @@
     
 <header>
     <div class="header content-size">
-        <h2>Confetch
+        <h2>utils
         </h2>
         
     </div>
@@ -243,14 +243,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="~confetch">
-            <a class="share-icon" href="#~confetch"><span class="glyphicon glyphicon-link"></span></a>
+        <h4 class="name" id=".customFetch">
+            <a class="share-icon" href="#.customFetch"><span class="glyphicon glyphicon-link"></span></a>
             <span class="">
-                confetch
+                module:utils.customFetch
             </span>
-            <span class="signature">(info)</span><span class="type-signature">object</span>
+            <span class="signature">(parameters)</span><span class="type-signature">object</span>
             
-            <span class="access-signature">inner</span>
+            <span class="access-signature">static</span>
             
             
         </h4>
@@ -264,7 +264,7 @@
     
     
     <div class="description">
-        Create a confetch instance which can be sent or aborted
+        Wrapper over fetch
     </div>
     
 
@@ -295,13 +295,159 @@
 	
         <tr>
             
-                <td class="name"><code>info</code></td>
+                <td class="name"><code>parameters</code></td>
             
             
             <td class="type">
             
                 
 <span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                url, method, and other request parameters as mentioned in <a target="_blank" href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        object
+                        
+                    
+            </td>
+            <td class="description last">{ send: () => {}, abort: () => {} }</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".getUrlFromPath">
+            <a class="share-icon" href="#.getUrlFromPath"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                module:utils.getUrlFromPath
+            </span>
+            <span class="signature">(path)</span><span class="type-signature">string</span>
+            
+            <span class="access-signature">static</span>
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get url from a string containing path and other params.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
 
 
             
@@ -350,6 +496,18 @@
     
     
     
+    <h5>Throws:</h5>
+    
+            
+
+    <div class="param-desc">
+    
+        Will throw error if baseUrl is not specified or is not valid.
+    
+    </div>
+
+
+        
     
     
     <h5>Returns:</h5>
@@ -370,591 +528,11 @@
             
             <td class="type">
             
-                        object
+                        string
                         
                     
             </td>
-            <td class="description last"></td>
-        </tr>
-    
-    </tbody>
-</table>
-
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="~configure">
-            <a class="share-icon" href="#~configure"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="status-deprecated">
-                configure
-            </span>
-            <span class="signature">(baseUrl, headers, timeoutDuration, debug)</span>
-            
-                <span class="access-signature deprecated">Deprecated
-                </span>
-            
-            <span class="access-signature">inner</span>
-            
-            
-        </h4>
-    
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Configure parameters for all confetch requests
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>baseUrl</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                If you want to send requests on https://www.your.domain/abc, your baseUrl is https://www.your.domain.</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>headers</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                Same as headers option passed in fetch: for more information, check: <a target="_blank" href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a>.</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>timeoutDuration</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                Timeout duration in millis, for 3 secs, it'll be 3000.</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>debug</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                default: false, set it to true if you want some logs.</td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="~configureConfetch">
-            <a class="share-icon" href="#~configureConfetch"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="">
-                configureConfetch
-            </span>
-            <span class="signature">(baseUrl, headers, timeoutDuration, debug)</span>
-            
-            <span class="access-signature">inner</span>
-            
-            
-        </h4>
-    
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Configure parameters for all confetch requests
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>baseUrl</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                If you want to send requests on https://www.your.domain/abc, your baseUrl is https://www.your.domain.</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>headers</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                Same as headers option passed in fetch: for more information, check: <a target="_blank" href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a>.</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>timeoutDuration</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                Timeout duration in millis, for 3 secs, it'll be 3000.</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>debug</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                default: false, set it to true if you want some logs.</td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="~getConfetchConfiguration">
-            <a class="share-icon" href="#~getConfetchConfiguration"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="">
-                getConfetchConfiguration
-            </span>
-            <span class="signature">()</span><span class="type-signature">object</span>
-            
-            <span class="access-signature">inner</span>
-            
-            
-        </h4>
-    
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns current configuration of confetch requests
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            
-            <td class="type">
-            
-                        object
-                        
-                    
-            </td>
-            <td class="description last">current configuration of confetch requests</td>
-        </tr>
-    
-    </tbody>
-</table>
-
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="~getCurrentGlobalConfiguration">
-            <a class="share-icon" href="#~getCurrentGlobalConfiguration"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="status-deprecated">
-                getCurrentGlobalConfiguration
-            </span>
-            <span class="signature">()</span><span class="type-signature">object</span>
-            
-                <span class="access-signature deprecated">Deprecated
-                </span>
-            
-            <span class="access-signature">inner</span>
-            
-            
-        </h4>
-    
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Returns current configuration of confetch requests
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            
-            <td class="type">
-            
-                        object
-                        
-                    
-            </td>
-            <td class="description last">current configuration of confetch requests</td>
+            <td class="description last">complete url.</td>
         </tr>
     
     </tbody>
@@ -985,7 +563,7 @@
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Apr 05 2021 23:48:06 GMT+0530 (India Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Apr 06 2021 00:08:48 GMT+0530 (India Standard Time)
             </div>
         </footer>
     </div>
