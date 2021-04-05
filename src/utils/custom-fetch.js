@@ -1,27 +1,5 @@
-let Request, AbortController
-try {
-  if (typeof window.Request === 'undefined' && typeof process === 'object') {
-    // console.log('Running on nodejs')
-    Request = require('node-fetch').Request
-    AbortController = require('abort-controller')
-  } else {
-    // console.log('Running on browser')
-    Request = window.Request
-    AbortController = window.AbortController
-  }
-} catch (error) {
-  // suppressed
-}
-
-// initialise the contructors using not utils if not initialised
-
-if (!Request) Request = require('node-fetch').Request
-if (!AbortController) AbortController = require('abort-controller')
-
-// console.log('Request: ', typeof Request)
-// console.log('AbortController: ', typeof AbortController)
-
-// this is node
+const AbortController = window.AbortController || require('abort-controller')
+const Request = window.Request || require('node-fetch').Request
 
 /**
  * Wrapper over fetch
