@@ -178,7 +178,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="module-utils.html">Module: utils</h1>
+        <h1 class="page-title" data-filename="module-handlers.html">Module: handlers</h1>
         
 
 
@@ -187,7 +187,7 @@
     
 <header>
     <div class="header content-size">
-        <h2>utils
+        <h2>handlers
         </h2>
         
     </div>
@@ -251,14 +251,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id=".customFetch">
-            <a class="share-icon" href="#.customFetch"><span class="glyphicon glyphicon-link"></span></a>
+        <h4 class="name" id="~buildResponseHandler">
+            <a class="share-icon" href="#~buildResponseHandler"><span class="glyphicon glyphicon-link"></span></a>
             <span class="">
-                module:utils.customFetch
+                buildResponseHandler
             </span>
-            <span class="signature">(parameters)</span><span class="type-signature">object</span>
+            <span class="signature">(statusCodes)</span><span class="type-signature">function</span>
             
-            <span class="access-signature">static</span>
+            <span class="access-signature">inner</span>
             
             
         </h4>
@@ -272,7 +272,7 @@
     
     
     <div class="description">
-        Wrapper over fetch (browser), for more details, checkout <a target="_blank" href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch' rel='nofollow norefferer' target='_blank'>Using Fetch | MDN</a>.
+        Create an responseHandler with statusCodes (optional, will merge)
     </div>
     
 
@@ -303,305 +303,13 @@
 	
         <tr>
             
-                <td class="name"><code>parameters</code></td>
+                <td class="name"><code>statusCodes</code></td>
             
             
             <td class="type">
             
                 
 <span class="param-type">object</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                url, method, and other request parameters as mentioned in <a target="_blank" href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a></td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            
-            <td class="type">
-            
-                        object
-                        
-                    
-            </td>
-            <td class="description last">{ send: () => {}, abort: () => {} }</td>
-        </tr>
-    
-    </tbody>
-</table>
-
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id=".customFetch">
-            <a class="share-icon" href="#.customFetch"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="">
-                module:utils.customFetch
-            </span>
-            <span class="signature">(parameters)</span><span class="type-signature">object</span>
-            
-            <span class="access-signature">static</span>
-            
-            
-        </h4>
-    
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Wrapper over fetch (node), for more details, checkout <a target="_blank" href='https://github.com/node-fetch/node-fetch#api' rel='nofollow norefferer' target='_blank'>Node-fetch docs</a>.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                url, method, and other request parameters as mentioned in <a target="_blank" href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a></td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            
-            <td class="type">
-            
-                        object
-                        
-                    
-            </td>
-            <td class="description last">{ send: () => {}, abort: () => {} }</td>
-        </tr>
-    
-    </tbody>
-</table>
-
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id=".getUrlFromPath">
-            <a class="share-icon" href="#.getUrlFromPath"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="">
-                module:utils.getUrlFromPath
-            </span>
-            <span class="signature">(path)</span><span class="type-signature">string</span>
-            
-            <span class="access-signature">static</span>
-            
-            
-        </h4>
-    
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Get url from a string containing path and other params.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
 
 
             
@@ -650,18 +358,6 @@
     
     
     
-    <h5>Throws:</h5>
-    
-            
-
-    <div class="param-desc">
-    
-        Will throw error if baseUrl is not specified or is not valid.
-    
-    </div>
-
-
-        
     
     
     <h5>Returns:</h5>
@@ -682,16 +378,133 @@
             
             <td class="type">
             
-                        string
+                        function
                         
                     
             </td>
-            <td class="description last">complete url.</td>
+            <td class="description last">errorHandler</td>
         </tr>
     
     </tbody>
 </table>
 
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="~configureStatusCodeBasedErrors">
+            <a class="share-icon" href="#~configureStatusCodeBasedErrors"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                configureStatusCodeBasedErrors
+            </span>
+            <span class="signature">(statusCodes)</span>
+            
+            <span class="access-signature">inner</span>
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Configure status code based errors for all responseHandlers
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>statusCodes</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
     
     
     
@@ -717,7 +530,7 @@
 
         <footer class="content-size">
             <div class="footer">
-                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Apr 06 2021 03:19:24 GMT+0530 (India Standard Time)
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Apr 06 2021 03:22:04 GMT+0530 (India Standard Time)
             </div>
         </footer>
     </div>

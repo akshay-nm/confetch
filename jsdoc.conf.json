@@ -1,4 +1,5 @@
 {
+  "applicationName": "Confetch",
   "source": {
     "includePattern": ".+\\.js(doc|x)?$",   
     "include": ["./src"],                       
@@ -10,7 +11,8 @@
     "destination": "./docs/",               
     "recurse": true,
     "readme": "./README.md",
-    "template": "./node_modules/@pixi/jsdoc-template"        
+    "template": "./node_modules/@pixi/jsdoc-template",
+    "package": "./package.json"        
   },
   "tags": {
     "allowUnknownTags": true,
