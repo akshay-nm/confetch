@@ -1,22 +1,33 @@
 # Confetch
 
 **Configur-ed/able fetch**
-**VOLATILE PACKAGE (RAPIDLY CHANGING API SO PLEASE BEAR WITH ME TILL v1.0.0)**
-
-**v0.7.0 to v0.8.0 means some features/methods have been deprecated**
-**v0.7.0 to v0.7.1 means a new feature/method has been added without changing existing ones**
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![codecov](https://codecov.io/gh/akshay-nm/confetch/branch/main/graph/badge.svg?token=4WB73CELH0)](https://codecov.io/gh/akshay-nm/confetch)
 
 ## tldr;
 
+To get started:
+
+`npm install @akshay-nm/confetch`
+
+or
+
+`yarn add @akshay-nm/confetch`
+
 This is a wrapper over `window.fetch`. Go through [https://github.com/akshay-nm/confetch-example](https://github.com/akshay-nm/confetch-example) and [Confetch manual](https://akshay-nm.github.io/confetch) for more details.
 
 This package also has a default `responseHandler` which you can use. The `responseHandler` just resolves the `res.json()` promise if possible, otherwise throws the errors based on statusCodes. You can pass the errors as an object.
 
+### For the bravehearts
+
+_VOLATILE PACKAGE (RAPIDLY CHANGING API so please bear with me till we reach v1.0.0)_
+_v0.x.0 to v0.y.0 means some features/methods have been deprecated_
+_v0.x.y to v0.x.z means a new feature/method has been added without changing existing ones_
+
 ```jsx
-const { configureStatusCodeBasedErrors, configureConfetch } = require('@akshay-nm/confetch')
+const { configureConfetch } = require('@akshay-nm/confetch')
+const { configureStatusCodeBasedErrors } = require('@akshay-nm/confetch').handlers
 
 // The new object is merged (it does not replace the default status codes configuration).
 configureStatusCodeBasedErrors({
@@ -29,7 +40,8 @@ configureConfetch({
 
 ...
 
-const { buildResponseHandler, getUrlFromPath } = require('@akshay-nm/confetch')
+const { buildResponseHandler } = require('@akshay-nm/confetch').handlers
+const { getUrlFromPath } = require('@akshay-nm/confetch').utils
 
 const responseHandler1 = buildResponseHandler() // This will throw errors preconfigured message
 const responseHandler2 = buildResponseHandler({ 400: 'OTHER CUSTOM MESSAGE' }) // This will throw error with 'OTHER CUSTOM MESSAGE' on 400
@@ -47,8 +59,6 @@ confetch({
 ```
 
 Since the response handler just tries to convert the response into JSON, it either returns a promise or just throws the errors.
-
-## Some details
 
 Following configuration options are supported:
 
@@ -78,7 +88,7 @@ Both of them return a promise.
 So this is how it would look like:
 
 ```jsx
-const { configure } = require('@akshay-nm/confetch')
+const { configureConfetch } = require('@akshay-nm/confetch')
 confetchConfiguration = {
   baseUrl: 'https://some.org',
   timeoutDuration = 3000,
@@ -86,7 +96,7 @@ confetchConfiguration = {
     'Content-Type': 'application/json'
   }
 }
-configure(confetchConfiguration)
+configureConfetch(confetchConfiguration)
 
 ...
 const { confetch } = require('@akshay-nm/confetch')
