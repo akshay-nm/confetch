@@ -1,8 +1,8 @@
 {
   "name": "@akshay-nm/confetch",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "Configur-ed/able fetch",
-  "main": "index.js",
+  "main": "./src/index.js",
   "repository": "git@github.com:akshay-nm/confetch.git",
   "author": "Akshay Kumar <akshay.nm92@gmail.com>",
   "license": "MIT",
@@ -11,13 +11,17 @@
     "collectCoverage": true
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "docs": "jsdoc -c ./jsdoc.conf.json"
   },
   "devDependencies": {
     "jest": "^26.6.3"
   },
   "dependencies": {
+    "@pixi/jsdoc-template": "^2.6.0",
     "abort-controller": "^3.0.0",
+    "jaguarjs-jsdoc": "^1.1.0",
+    "jsdoc": "^3.6.6",
     "node-fetch": "^2.6.1"
   }
 }

@@ -22,6 +22,14 @@ if (!AbortController) AbortController = require('abort-controller')
 // console.log('AbortController: ', typeof AbortController)
 
 // this is node
+
+/**
+ * Wrapper over fetch
+ * @memberof module:utils
+ *
+ * @param {object} parameters url, method, and other request parameters as mentioned in <a href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options' rel='nofollow noreferrer' target='_blank'>Supplying request options to fetch</a>
+ * @returns {object} { send: () => {}, abort: () => {} }
+ */
 const customFetch = (parameters = {}) => {
   try {
     // filter parameters
@@ -67,6 +75,7 @@ const customFetch = (parameters = {}) => {
 
     // expose an abort function
     requestController.timeout = null
+
     requestController.abort = () =>
       new Promise((resolve) => {
         if (requestController.timeout) clearTimeout(requestController.timeout)

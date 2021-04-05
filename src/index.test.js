@@ -1,4 +1,4 @@
-const { confetch, configure, getCurrentGlobalConfiguration, getUrlFromPath } = require('./index')
+const { confetch, configureConfetch, getConfetchConfiguration, getUrlFromPath } = require('./index')
 const defaultConfiguration = {
   debug: false,
   requestParams: {
@@ -20,14 +20,14 @@ const defaultConfigurePayload = {
 describe('Confetch:', () => {
   describe('configuration:', () => {
     beforeEach(() => {
-      configure(defaultConfigurePayload)
+      configureConfetch(defaultConfigurePayload)
     })
     test('Default global configuration is set: ', () => {
-      expect(getCurrentGlobalConfiguration()).toEqual(defaultConfiguration)
+      expect(getConfetchConfiguration()).toEqual(defaultConfiguration)
     })
     test('Global configuration can be modified correctly (merged and not replaced): ', () => {
-      configure({ timeoutDuration: 4000 })
-      const config = getCurrentGlobalConfiguration()
+      configureConfetch({ timeoutDuration: 4000 })
+      const config = getConfetchConfiguration()
       expect(config.requestParams.timeoutDuration).toEqual(4000)
       expect(config.debug).toEqual(defaultConfiguration.debug)
     })
@@ -44,19 +44,20 @@ describe('Confetch:', () => {
   })
   describe('getUrlFromPath: ', () => {
     test('Throw if baseUrl is not set: ', () => {
-      expect(getCurrentGlobalConfiguration().baseUrl).toBe(undefined)
+      expect(getConfetchConfiguration().baseUrl).toBe(undefined)
       expect(() => getUrlFromPath()).toThrow()
     })
     test('Return correct url from path: ', () => {
-      configure({
+      configureConfetch({
         baseUrl: 'https://sdiot.io',
         timeoutDuration: 5000,
       })
 
-      expect(getCurrentGlobalConfiguration().baseUrl).toEqual('https://sdiot.io')
+      expect(getConfetchConfiguration().baseUrl).toEqual('https://sdiot.io')
       expect(getUrlFromPath('/xyz')).toEqual('https://sdiot.io/xyz')
       expect(getUrlFromPath('/xyz/abc')).toEqual('https://sdiot.io/xyz/abc')
       expect(getUrlFromPath('/xyz/abc?a=1')).toEqual('https://sdiot.io/xyz/abc?a=1')
     })
   })
+  describe('buildResponseHandler:')
 })
