@@ -4,6 +4,7 @@
     "include": ["./src"],                       
     "exclude": ["node_modules"]             
   },
+  "sourceType": "module",
   "recurseDepth": 10,                         
   "opts": {
     "destination": "./docs/",               
@@ -14,5 +15,12 @@
   "tags": {
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc"]
+  },
+  "templates": {
+    "meta": {
+      "title": "Confetch",
+      "description": "Configur-able/ed fetch requests",
+      "keyword": "configurable fetch requests, configured fetch requests, javascript, akshay-nm, confetch"
+    }
   }
 }
