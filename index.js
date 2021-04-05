@@ -11,8 +11,19 @@ const config = {
   },
 }
 
+/**
+ * Returns current configuration of confetch requests
+ * @returns {object} current configuration of confetch requests
+ */
 const getCurrentGlobalConfiguration = () => ({ ...config })
 
+/**
+ * Configure parameters for all confetch requests
+ * @param {string} baseUrl
+ * @param {object} headers
+ * @param {number} timeoutDuration
+ * @param {boolean} debug
+ */
 const configure = ({ baseUrl, headers, timeoutDuration, debug }) => {
   config.debug = !!debug || config.debug
   config.baseUrl = baseUrl || config.baseUrl
@@ -21,12 +32,22 @@ const configure = ({ baseUrl, headers, timeoutDuration, debug }) => {
   config.requestParams.headers = headers || config.requestParams.headers
 }
 
+/**
+ * Get url from a string containing path and other params
+ * @param {string} path
+ * @returns {string} complete url
+ */
 const getUrlFromPath = (path) => {
   if (!config.baseUrl)
     throw Error('Incomplete configuration: Base url not specified or is not valid. config.urlBase:', config.urlBase)
   return `${config.baseUrl}${path || ''}`
 }
 
+/**
+ * Create a confetch instance which can be sent or aborted
+ * @param {object} info
+ * @returns {object}
+ */
 const confetch = (info) => {
   const requestConfiguration = _.merge({}, config.requestParams, info)
   return customFetch(requestConfiguration)

@@ -9,6 +9,26 @@
 
 This is a wrapper over `window.fetch`. Go through [https://github.com/akshay-nm/confetch-example](https://github.com/akshay-nm/confetch-example) for more details.
 
+This package also has a default `responseHandler` which you can use. The `responseHandler` just resolves the `res.json()` promise if possible, otherwise throws the errors based on statusCodes. You can pass the errors as an object.
+
+```jsx
+const defaultStatusCodes = {
+  400: 'INCORRECT_REQUEST_FORMAT',
+  401: 'INVALID_SESSION',
+  403: 'FORBIDDEN',
+  404: 'RESOURCE_NOT_FOUND',
+  408: 'REQUEST_TIMED_OUT',
+}
+
+const responseHandler = (response, statusCodes = defaultStatusCodes) => {
+  if (response?.ok) return response.json()
+  if (response && response.status && statusCodes[response.status]) throw Error(statusCodes[response.status])
+  throw Error('REQUEST_TIMED_OUT') // This will be reached only if the request was aborted using abort controller
+}
+```
+
+Any additional errors are thrown as is.
+
 ## Some details
 
 Following configuration options are supported:
@@ -79,8 +99,6 @@ confetch(info).send()
     /*handle error*/
   })
 ```
-
-You can go through the `sample-api.js` and `sample-protected-api.js` if you are looking for examples.
 
 ### What's next?
 
