@@ -6,7 +6,10 @@ const nodejsConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'confetch.node.js',
-    library: 'confetch',
+    library: {
+      name: 'confetch',
+      type: 'commonjs',
+    },
   },
   module: {
     rules: [
@@ -43,7 +46,10 @@ const browserConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'confetch.js',
-    library: 'confetch',
+    library: {
+      name: 'confetch',
+      type: 'commonjs',
+    },
   },
   module: {
     rules: [
