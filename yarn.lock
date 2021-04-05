@@ -483,6 +483,14 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@pixi/jsdoc-template@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@pixi/jsdoc-template/-/jsdoc-template-2.6.0.tgz#7a906392d82c3c563db414846a7e7ece33a4ff62"
+  integrity sha512-WsSGk2x0ywXQu4RqiKfBCnEbT1izRgVRSkHWSv8VUOQk96tvLOlayZdlCCfudrNmpPw9tJADsWPnAXkxSWFKRg==
+  dependencies:
+    taffydb "^2.7.2"
+    underscore "^1.7.0"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.2.tgz#858f5c4b48d80778fde4b9d541f27edc0d56488b"
@@ -1903,6 +1911,14 @@ istanbul-reports@^3.0.2:
   dependencies:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
+
+jaguarjs-jsdoc@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jaguarjs-jsdoc/-/jaguarjs-jsdoc-1.1.0.tgz#3e3cff963bd12d4e43d524d9c606714e2bfa2901"
+  integrity sha1-Pjz/ljvRLU5D1STZxgZxTiv6KQE=
+  dependencies:
+    taffydb "^2.7.2"
+    underscore "^1.7.0"
 
 jest-changed-files@^26.6.2:
   version "26.6.2"
@@ -3401,6 +3417,11 @@ taffydb@2.6.2:
   resolved "https://registry.yarnpkg.com/taffydb/-/taffydb-2.6.2.tgz#7cbcb64b5a141b6a2efc2c5d2c67b4e150b2a268"
   integrity sha1-fLy2S1oUG2ou/CxdLGe04VCyomg=
 
+taffydb@^2.7.2:
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/taffydb/-/taffydb-2.7.3.tgz#2ad37169629498fca5bc84243096d3cde0ec3a34"
+  integrity sha1-KtNxaWKUmPylvIQkMJbTzeDsOjQ=
+
 terminal-link@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/terminal-link/-/terminal-link-2.1.1.tgz#14a64a27ab3c0df933ea546fba55f2d078edc994"
@@ -3539,6 +3560,11 @@ uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
   integrity sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
+
+underscore@^1.7.0:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.12.1.tgz#7bb8cc9b3d397e201cf8553336d262544ead829e"
+  integrity sha512-hEQt0+ZLDVUMhebKxL4x1BTtDY7bavVofhZ9KZ4aI26X9SRaE+Y3m83XUL1UP2jn8ynjndwCCpEHdUG+9pP1Tw==
 
 underscore@~1.10.2:
   version "1.10.2"
