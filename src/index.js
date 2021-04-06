@@ -5,6 +5,9 @@
 const { customFetch } = require('./utils')
 const _ = require('lodash')
 
+const handlers = require('./handlers')
+const utils = require('./utils')
+
 const config = {
   debug: false,
   requestParams: {
@@ -77,6 +80,6 @@ module.exports = {
   configure,
   getConfetchConfiguration,
   getCurrentGlobalConfiguration,
-  utils: require('./utils'),
-  handlers: require('./handlers'),
+  utils,
+  handlers,
 }
