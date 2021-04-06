@@ -1,6 +1,6 @@
 {
   "name": "@akshay-nm/confetch",
-  "version": "0.8.2-pre11",
+  "version": "0.8.2",
   "description": "Configur-ed/able fetch",
   "main": "dist/confetch.js",
   "repository": "git@github.com:akshay-nm/confetch.git",
