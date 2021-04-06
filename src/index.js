@@ -71,13 +71,26 @@ const configure = ({ baseUrl, headers, timeoutDuration, debug }) => {
   config.requestParams.headers = headers || config.requestParams.headers
 }
 
+/**
+ * Get url from a string containing path and other params.
+ * @memberof module:utils
+ * @param {string} path
+ * @returns {string} complete url.
+ * @throws Will throw error if baseUrl is not specified or is not valid.
+ */
+const getUrlFromPath = (path) => {
+  if (!config.baseUrl)
+    throw Error('Incomplete configuration: Base url not specified or is not valid. config.urlBase:', config.urlBase)
+  return `${config.baseUrl}${path || ''}`
+}
+
 exports.confetch = confetch
 exports.configureConfetch = configureConfetch
 exports.configure = configure
 exports.getConfetchConfiguration = getConfetchConfiguration
 exports.getCurrentGlobalConfiguration = getCurrentGlobalConfiguration
 exports.utils = {}
-exports.utils.getUrlFromPath = require('./utils').getUrlFromPath
+exports.utils.getUrlFromPath = getUrlFromPath
 exports.utils.customFetch = customFetch
 exports.handlers = {}
 exports.handlers.configureStatusCodeBasedErrors = require('./handlers').configureStatusCodeBasedErrors

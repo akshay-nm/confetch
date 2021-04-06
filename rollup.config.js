@@ -34,14 +34,4 @@ export default [
     },
     plugins: [nodeResolve(), babel({ babelHelpers: 'bundled' }), commonjs(), uglify()],
   },
-  {
-    input: 'src/utils/get-url-from-path.js',
-    output: {
-      file: 'dist/get-url-from-path.js',
-      format: 'cjs',
-      sourcemap: true,
-      exports: 'named',
-    },
-    plugins: [nodeResolve(), babel({ babelHelpers: 'bundled' }), commonjs(), uglify()],
-  },
 ]
