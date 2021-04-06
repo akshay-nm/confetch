@@ -1,0 +1,2 @@
+var Confetch=function(){"use strict";let o={400:"INCORRECT_REQUEST_FORMAT",401:"INVALID_SESSION",403:"FORBIDDEN",404:"RESOURCE_NOT_FOUND",408:"REQUEST_TIMED_OUT"};return{buildResponseHandler:(E={})=>r=>{var t={...o,...E};if(r){if(r.ok)return r.json();if(t[r.status])throw Error(t[r.status]);throw Error(`${r.status}`)}throw Error("REQUEST_TIMED_OUT")},configureStatusCodeBasedErrors:(r={})=>{o={...o,...r}}}}();
+//# sourceMappingURL=handlers.js.map

@@ -31,10 +31,13 @@ const buildResponseHandler = (statusCodes = {}) => (response) => {
     ...defaultStatusCodes,
     ...statusCodes,
   }
-  if (response?.ok) return response.json()
-  if (response && response.status && requestStatusCodes[response.status])
-    throw Error(requestStatusCodes[response.status])
-  throw Error('REQUEST_TIMED_OUT') // This will be reached only if the request was aborted using abort controller
+  if (response) {
+    if (response.ok) return response.json()
+    if (requestStatusCodes[response.status]) throw Error(requestStatusCodes[response.status])
+    throw Error(`${response.status}`)
+  } else {
+    throw Error('REQUEST_TIMED_OUT')
+  }
 }
 
 module.exports = {
