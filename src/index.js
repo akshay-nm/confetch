@@ -1,9 +1,8 @@
 /**
  * @module Confetch
  */
-
+import merge from 'lodash/merge'
 const { customFetch } = require('./utils')
-const _ = require('lodash')
 
 const handlers = require('./handlers')
 const utils = require('./utils')
@@ -54,7 +53,7 @@ const configureConfetch = ({ baseUrl, headers, timeoutDuration, debug }) => {
  * @returns {object}
  */
 const confetch = (info) => {
-  const requestConfiguration = _.merge({}, config.requestParams, info)
+  const requestConfiguration = merge({}, config.requestParams, info)
   return customFetch(requestConfiguration)
 }
 
