@@ -2,14 +2,13 @@ const path = require('path')
 
 const nodejsConfig = {
   target: 'node',
-  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'confetch.node.js',
-    library: {
-      name: 'confetch',
-      type: 'commonjs',
-    },
+    filename: '[name].node.js',
+    library: 'confetch',
+  },
+  optimization: {
+    splitChunks: { chunks: 'all' },
   },
   module: {
     rules: [
@@ -17,9 +16,15 @@ const nodejsConfig = {
         test: require.resolve('./src/utils/custom-fetch.js'),
         use: [
           {
-            loader: `val-loader`,
+            loader: path.resolve('./src/utils/custom-fetch.loader.js'),
             options: {
               isBrowser: false,
+            },
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
             },
           },
         ],
@@ -42,14 +47,13 @@ const nodejsConfig = {
 }
 const browserConfig = {
   target: 'web',
-  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'confetch.js',
-    library: {
-      name: 'confetch',
-      type: 'commonjs',
-    },
+    filename: '[name].js',
+    library: 'confetch',
+  },
+  optimization: {
+    splitChunks: { chunks: 'all' },
   },
   module: {
     rules: [
@@ -57,9 +61,16 @@ const browserConfig = {
         test: require.resolve('./src/utils/custom-fetch.js'),
         use: [
           {
-            loader: `val-loader`,
+            loader: path.resolve('./src/utils/custom-fetch.loader.js'),
             options: {
-              isBrowser: true,
+              isBrowser: false,
+            },
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-arrow-functions'],
             },
           },
         ],
