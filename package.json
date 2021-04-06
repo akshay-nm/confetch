@@ -1,8 +1,8 @@
 {
   "name": "@akshay-nm/confetch",
-  "version": "0.8.2-pre4",
+  "version": "0.8.2-pre5",
   "description": "Configur-ed/able fetch",
-  "main": "dist/main.js",
+  "main": "dist/confetch.js",
   "repository": "git@github.com:akshay-nm/confetch.git",
   "author": "Akshay Kumar <akshay.nm92@gmail.com>",
   "license": "MIT",
@@ -13,16 +13,14 @@
   "scripts": {
     "test": "jest",
     "docs": "jsdoc -c ./jsdoc.conf.json",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "rollup -c ./rollup.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
-    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
-    "@babel/plugin-transform-arrow-functions": "^7.13.0",
-    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "@pixi/jsdoc-template": "^2.6.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "abort-controller": "^3.0.0",
     "babel-loader": "^8.2.2",
     "jaguarjs-jsdoc": "^1.1.0",
@@ -30,8 +28,10 @@
     "jsdoc": "^3.6.6",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
-    "val-loader": "^3.1.0",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0"
+    "rollup": "^2.44.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "dependencies": {
+    "@akshay-nm/custom-fetch": "^1.0.1"
   }
 }
