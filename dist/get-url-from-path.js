@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const getUrlFromPath=r=>{if(!config.baseUrl)throw Error("Incomplete configuration: Base url not specified or is not valid. config.urlBase:",config.urlBase);return`${config.baseUrl}${r||""}`};var getUrlFromPath_2=getUrlFromPath,getUrlFromPath_1={getUrlFromPath:getUrlFromPath_2};exports.default=getUrlFromPath_1,exports.getUrlFromPath=getUrlFromPath_2;
+//# sourceMappingURL=get-url-from-path.js.map

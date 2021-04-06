@@ -2,10 +2,8 @@
  * @module Confetch
  */
 import merge from 'lodash/merge'
-const { customFetch } = require('./utils')
 
-const handlers = require('./handlers')
-const utils = require('./utils')
+const { customFetch } = require('./utils')
 
 const config = {
   debug: false,
@@ -73,12 +71,14 @@ const configure = ({ baseUrl, headers, timeoutDuration, debug }) => {
   config.requestParams.headers = headers || config.requestParams.headers
 }
 
-module.exports = {
-  confetch,
-  configureConfetch,
-  configure,
-  getConfetchConfiguration,
-  getCurrentGlobalConfiguration,
-  utils,
-  handlers,
-}
+exports.confetch = confetch
+exports.configureConfetch = configureConfetch
+exports.configure = configure
+exports.getConfetchConfiguration = getConfetchConfiguration
+exports.getCurrentGlobalConfiguration = getCurrentGlobalConfiguration
+exports.utils = {}
+exports.utils.getUrlFromPath = require('./utils').getUrlFromPath
+exports.utils.customFetch = customFetch
+exports.handlers = {}
+exports.handlers.configureStatusCodeBasedErrors = require('./handlers').configureStatusCodeBasedErrors
+exports.handlers.buildResponseHandler = require('./handlers').buildResponseHandler

@@ -40,7 +40,5 @@ const buildResponseHandler = (statusCodes = {}) => (response) => {
   }
 }
 
-module.exports = {
-  buildResponseHandler,
-  configureStatusCodeBasedErrors,
-}
+exports.buildResponseHandler = buildResponseHandler
+exports.configureStatusCodeBasedErrors = configureStatusCodeBasedErrors

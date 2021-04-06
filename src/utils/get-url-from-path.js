@@ -11,4 +11,4 @@ const getUrlFromPath = (path) => {
   return `${config.baseUrl}${path || ''}`
 }
 
-module.exports = getUrlFromPath
+exports.getUrlFromPath = getUrlFromPath
