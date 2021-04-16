@@ -50,8 +50,13 @@ const configureConfetch = ({ baseUrl, headers, timeoutDuration, debug }) => {
  * @param {object} info
  * @returns {object}
  */
-const confetch = (info) => {
-  const requestConfiguration = merge({}, config.requestParams, info)
+const confetch = (info = {}, omitConfig = { headers: [] }) => {
+  const defaultConfig = merge({}, config.requestParams)
+
+  omitConfig.headers.map((headerToBeOmitted) => delete defaultConfig.headers[headerToBeOmitted])
+
+  const requestConfiguration = merge({}, defaultConfig, info)
+
   return customFetch(requestConfiguration)
 }
 
