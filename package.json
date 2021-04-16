@@ -3,7 +3,10 @@
   "version": "0.8.3",
   "description": "Configur-ed/able fetch",
   "main": "dist/confetch.js",
-  "repository": "git@github.com:akshay-nm/confetch.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akshay-nm/confetch.git"
+  },
   "author": "Akshay Kumar <akshay.nm92@gmail.com>",
   "license": "MIT",
   "keywords": ["fetch", "configurable", "configured", "wrapper", "fetch with abort", "abortable fetch", "configurable fetch", "configured fetch", "nm", "nightmoves", "akshay"],
